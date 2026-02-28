@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All-in-One Web Hub</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>All-in-One Website</h1>
+  <p>Portfolio • ToDo • Product UI</p>
+</header>
+
+<nav>
+  <button onclick="showSection('portfolio')">Portfolio</button>
+  <button onclick="showSection('todo')">ToDo App</button>
+  <button onclick="showSection('products')">Products</button>
+</nav>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="active">
+  <h2>About Me</h2>
+  <div class="card">
+    Hi 👋 I'm <b>Monu</b><br>
+    CS student passionate about learning emerging technologies and building innovative projects that solve real-world problems.
+  </div>
+
+  <h2 style="margin-top:25px">Projects</h2>
+  <div class="grid">
+    <div class="card">🎮 Tic Tac Toe</div>
+    <div class="card">🌐 Modern Portfolio Website</div>
+    <div class="card">📚 Web Calculator</div>
+  </div>
+</section>
+
+<!-- TODO -->
+<section id="todo">
+  <h2>Smart ToDo (Saved in Browser)</h2>
+  <div class="todo-box">
+    <input id="todoInput" placeholder="Enter task..." />
+    <button class="primary" onclick="addTask()">Add</button>
+  </div>
+  <div id="todoList"></div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <h2>Product Explorer</h2>
+
+  <div class="controls">
+    <select id="categoryFilter" onchange="renderProducts()">
+      <option value="all">All</option>
+      <option value="tech">Tech</option>
+      <option value="bike">Bike</option>
+    </select>
+
+    <select id="sortPrice" onchange="renderProducts()">
+      <option value="default">Sort Price</option>
+      <option value="low">Low → High</option>
+      <option value="high">High → Low</option>
+    </select>
+  </div>
+
+  <div class="grid" id="productContainer"></div>
+</section>
+
+<footer>#Using HTML, CSS and JavaScript</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
